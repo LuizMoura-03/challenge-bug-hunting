@@ -62,6 +62,7 @@ public class Main {
                 for (Video video : resultados) {
                     System.out.println(video);
                 }
+
             } else if (opcao == 4) {
                 System.out.println("Saindo do sistema...");
                 break;
