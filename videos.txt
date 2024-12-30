@@ -1,2 +1,3 @@
 Luiz Aventuras;Aventura;1;Aventura;26/12/2024
 Biesca;Belezas;2;Animação;26/12/2024
+beleza;Natureza;2;natureza;20/12/0020
