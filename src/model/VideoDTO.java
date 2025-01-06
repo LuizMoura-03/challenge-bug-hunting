@@ -1,7 +1,7 @@
 package model;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class VideoDTO {
     private String titulo;
@@ -51,12 +51,8 @@ public class VideoDTO {
     }
 
     public Video toVideo() {
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyy");
-            Date data = sdf.parse(dataPublicacao);
-            return new Video(titulo, descricao, duracao, categoria, data);
-        } catch (Exception e) {
-            throw new IllegalArgumentException("Data de publicação inválida. ");
-        }
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate data = LocalDate.parse(dataPublicacao, formatter);
+        return new Video(titulo, descricao, duracao, Categoria.valueOf(categoria.toUpperCase()), data);
     }
 }

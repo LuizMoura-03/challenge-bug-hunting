@@ -8,7 +8,9 @@ public class CategorySearchStrategy implements SearchStrategy{
 
     @Override
     public List<Video> search(List<Video> videos, String query) {
-        return videos.stream().filter(video -> video.getCategoria().equalsIgnoreCase(query)).
-                collect(Collectors.toList());
+        String queyUpperCase = query.toUpperCase();
+
+        return videos.stream().filter(video -> video.getCategoria().name().equalsIgnoreCase(queyUpperCase))
+                .collect(Collectors.toList());
     }
 }
